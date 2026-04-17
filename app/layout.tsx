@@ -33,9 +33,9 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  title: 'B Vighnesh Kumar — Backend Developer | Full Stack Builder',
+  title: 'B Vighnesh Kumar',
   description:
-    'Portfolio of B Vighnesh Kumar — a backend-focused full stack developer from Mangalore, India. Specializing in Spring Boot APIs, React.js, and MySQL. Building systems that are reliable, scalable, and practical.',
+    'Portfolio of B Vighnesh Kumar — a Full stack developer from Mangalore, India. Specializing in Spring Boot APIs, React.js, and MySQL. Building systems that are reliable, scalable, and practical.',
   keywords: [
     'B Vighnesh Kumar',
     'Backend Developer',
@@ -50,8 +50,8 @@ export const metadata: Metadata = {
   authors: [{ name: 'B Vighnesh Kumar' }],
   creator: 'B Vighnesh Kumar',
   openGraph: {
-    title: 'B Vighnesh Kumar — Backend Developer',
-    description: 'Backend-focused full stack developer building reliable, scalable systems.',
+    title: 'B Vighnesh Kumar — Software Product Developer',
+    description: 'Full stack developer building reliable, scalable systems.',
     type: 'website',
     locale: 'en_IN',
   },

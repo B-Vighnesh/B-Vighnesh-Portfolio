@@ -310,7 +310,7 @@ export default function Contact() {
             letterSpacing: '0.06em',
           }}
         >
-          Karnataka, India
+          Mangalore, India
         </span>
       </div>
     </section>
