@@ -14,7 +14,7 @@ export const IDENTITY = {
     linkedin: 'https://linkedin.com/in/b-vighnesh-kumar',
     leetcode: 'https://leetcode.com/u/B_Vighnesh_Kumar',
   },
-  resumePath: 'https://drive.google.com/drive/folders/1l7s_ImuhapNcJ_joO7l8LpED-E-3ucVw',
+  resumePath: 'https://drive.usercontent.google.com/uc?id=1iMHx-6GyjqlKa0f_K5PeKtyaDVk1t2lQ&authuser=0&export=download',
 } as const;
 export const ROTATING_SUBTITLES = [
 
