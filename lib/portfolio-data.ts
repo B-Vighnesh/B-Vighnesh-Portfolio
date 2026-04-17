@@ -4,8 +4,8 @@
 
 export const IDENTITY = {
   name: 'B Vighnesh Kumar',
-  role: 'Backend-Focused Full Stack Developer',
-  location: 'Karnataka, India',
+  role: 'Full Stack Developer',
+  location: 'Mangalore, India',
   email: 'bvighneshkumar@gmail.com',
   phone: '+91 8618402581',
   tagline: 'I build backend systems and full stack applications that are reliable, scalable, and practical.',
@@ -14,14 +14,14 @@ export const IDENTITY = {
     linkedin: 'https://linkedin.com/in/b-vighnesh-kumar',
     leetcode: 'https://leetcode.com/u/B_Vighnesh_Kumar',
   },
-  resumePath: '/resume/B_Vighnesh_Kumar_Resume.pdf',
+  resumePath: 'https://drive.google.com/drive/folders/1l7s_ImuhapNcJ_joO7l8LpED-E-3ucVw',
 } as const;
-
 export const ROTATING_SUBTITLES = [
-  'Backend Developer',
-  'API Engineer',
-  'Full Stack Builder',
-  'Problem Solver',
+  'Full Stack Developer',
+  'Spring Boot Developer',
+  'Backend Engineer',
+  'React Developer',
+  'API Developer'
 ] as const;
 
 export const TIMELINE = [
@@ -162,9 +162,9 @@ export const VISION_PILLARS = [
 export const CONTACT_CTA = "Let's build something impactful.";
 
 export const NAV_LINKS = [
-  { label: 'Origin',  href: '#origin' },
-  { label: 'Craft',   href: '#craft' },
-  { label: 'Work',    href: '#work' },
-  { label: 'Vision',  href: '#vision' },
+  { label: 'Origin', href: '#origin' },
+  { label: 'Craft', href: '#craft' },
+  { label: 'Work', href: '#work' },
+  { label: 'Vision', href: '#vision' },
   { label: 'Contact', href: '#contact' },
 ] as const;
