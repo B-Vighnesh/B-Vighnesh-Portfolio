@@ -66,7 +66,7 @@ export const PROJECTS = [
     description:
       'A full stack marketplace that connects farmers directly with buyers — removing costly middlemen and bringing transparency to agricultural trade. Built with role-based access so farmers manage their listings and buyers browse and transact with confidence.',
     impact: 'Reduces intermediary dependency for rural farming communities',
-    tech: ['Spring Boot', 'React.js', 'MySQL', 'REST APIs', 'RBAC'],
+    tech: ['Spring Boot', 'React.js', 'MySQL', 'REST APIs'],
     highlights: [
       'Role-based access control for farmers and buyers',
       'Spring Boot REST API backend',
