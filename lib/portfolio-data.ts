@@ -45,7 +45,7 @@ export const TIMELINE = [
   },
   {
     year: '2026',
-    label: 'Software Product Developer Intern',
+    label: 'Software Product Developer ',
     description: 'Working on backend systems at Sclera VDMS, contributing to real-world product development, API design, and system architecture.',
   },
 ] as const;

@@ -28,14 +28,14 @@ export const viewport: Viewport = {
   initialScale: 1,
   themeColor: [
     { media: '(prefers-color-scheme: light)', color: '#FAFAF8' },
-    { media: '(prefers-color-scheme: dark)',  color: '#07070A' },
+    { media: '(prefers-color-scheme: dark)', color: '#07070A' },
   ],
 };
 
 export const metadata: Metadata = {
   title: 'B Vighnesh Kumar — Backend Developer | Full Stack Builder',
   description:
-    'Portfolio of B Vighnesh Kumar — a backend-focused full stack developer from Karnataka, India. Specializing in Spring Boot APIs, React.js, and MySQL. Building systems that are reliable, scalable, and practical.',
+    'Portfolio of B Vighnesh Kumar — a backend-focused full stack developer from Mangalore, India. Specializing in Spring Boot APIs, React.js, and MySQL. Building systems that are reliable, scalable, and practical.',
   keywords: [
     'B Vighnesh Kumar',
     'Backend Developer',
@@ -43,7 +43,7 @@ export const metadata: Metadata = {
     'Spring Boot',
     'React Developer',
     'Java Developer',
-    'Karnataka',
+    'Mangalore',
     'India',
     'Software Engineer',
   ],

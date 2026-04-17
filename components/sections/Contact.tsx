@@ -111,7 +111,7 @@ export default function Contact() {
           marginBottom: '3.5rem',
         }}
       >
-        Whether you&apos;re looking for a backend developer, want to collaborate on a project, 
+        Whether you&apos;re looking for a backend developer, want to collaborate on a project,
         or just want to say hello — I&apos;m always open to a conversation.
       </p>
 
@@ -128,7 +128,7 @@ export default function Contact() {
         }}
       >
         {[
-          { label: 'Location', value: 'Karnataka, India' },
+          { label: 'Location', value: 'Mangalore, India' },
           { label: 'Phone', value: IDENTITY.phone },
           { label: 'Status', value: 'Open to Opportunities' },
         ].map((item, i) => (
