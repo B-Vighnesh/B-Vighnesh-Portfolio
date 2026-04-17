@@ -95,7 +95,7 @@ export default function Hero() {
           className="reveal section-label"
           style={{ marginBottom: '2rem', display: 'inline-block' }}
         >
-          ⬡ Backend-Focused Developer · Karnataka, India
+          ⬡ Full Stack Developer · Mangalore, India
         </div>
 
         {/* Hero Name */}
@@ -119,12 +119,12 @@ export default function Hero() {
                 marginRight: '0.3em',
                 ...(i === 1
                   ? {
-                      background:
-                        'linear-gradient(135deg, var(--accent-primary) 0%, var(--accent-gold) 100%)',
-                      WebkitBackgroundClip: 'text',
-                      WebkitTextFillColor: 'transparent',
-                      backgroundClip: 'text',
-                    }
+                    background:
+                      'linear-gradient(135deg, var(--accent-primary) 0%, var(--accent-gold) 100%)',
+                    WebkitBackgroundClip: 'text',
+                    WebkitTextFillColor: 'transparent',
+                    backgroundClip: 'text',
+                  }
                   : {}),
               }}
             >

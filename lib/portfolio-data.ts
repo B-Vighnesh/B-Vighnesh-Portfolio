@@ -17,33 +17,41 @@ export const IDENTITY = {
   resumePath: 'https://drive.google.com/drive/folders/1l7s_ImuhapNcJ_joO7l8LpED-E-3ucVw',
 } as const;
 export const ROTATING_SUBTITLES = [
-  'Full Stack Developer',
-  'Spring Boot Developer',
-  'Backend Engineer',
-  'React Developer',
-  'API Developer'
+
+  'Software Engineer',
+  'Full Stack Developer'
 ] as const;
 
 export const TIMELINE = [
   {
     year: '2022',
     label: 'Started Engineering',
-    description: 'Enrolled in CSE, began building the foundation in algorithms, data structures, and core computer science.',
+    description: 'Began Computer Science Engineering and learned core programming languages including Java and C.',
+  },
+  {
+    year: '2023',
+    label: 'Core Computer Science',
+    description: 'Built strong foundations in OOP, Data Structures & Algorithms, DBMS, and Operating Systems.',
   },
   {
     year: '2024',
-    label: 'Built Full Stack Projects',
-    description: 'Delivered end-to-end applications connecting real users — applying Spring Boot, React, and MySQL in production-style environments.',
+    label: 'Full Stack Development',
+    description: 'Learned and applied technologies like Hibernate, Spring Boot, and React to build full stack web applications.',
+  },
+  {
+    year: '2025',
+    label: 'Exploring AI & Machine Learning',
+    description: 'Started working with Python and machine learning concepts alongside full stack development.',
   },
   {
     year: '2026',
-    label: 'Backend Developer Apprenticeship',
-    description: 'Joined Sclera VDMS as a Software Product Developer apprentice — learning real product architecture and system design hands-on.',
+    label: 'Software Product Developer Intern',
+    description: 'Working on backend systems at Sclera VDMS, contributing to real-world product development, API design, and system architecture.',
   },
 ] as const;
 
 export const SKILLS = {
-  Backend: ['Java', 'Spring Boot', 'REST APIs', 'JDBC'],
+  Backend: ['Java', 'Spring Boot', 'REST APIs', 'Hibernate', 'C', 'Python'],
   Frontend: ['React.js', 'HTML', 'CSS', 'JavaScript'],
   'Database & Tools': ['MySQL', 'Git', 'Postman', 'IntelliJ IDEA'],
   Concepts: ['Data Structures', 'OOP', 'DBMS', 'OS', 'Computer Networks'],
@@ -62,16 +70,17 @@ export const PROJECTS = [
   {
     id: 'aagriggate',
     title: 'AagriGgate',
-    subtitle: 'Farmer-to-Buyer Direct Platform',
+    subtitle: 'Farmer-to-Buyer Direct & Decision Support Platform',
     description:
-      'A full stack marketplace that connects farmers directly with buyers — removing costly middlemen and bringing transparency to agricultural trade. Built with role-based access so farmers manage their listings and buyers browse and transact with confidence.',
-    impact: 'Reduces intermediary dependency for rural farming communities',
-    tech: ['Spring Boot', 'React.js', 'MySQL', 'REST APIs'],
+      'A full stack marketplace that connects farmers directly with buyers, removing costly middlemen and bringing transparency to agricultural trade. Also functions as a decision support platform by providing market insights and guidance to help farmers make informed selling decisions. Built with role-based access so farmers manage their listings and buyers browse and transact with confidence.',
+    impact: 'Reduces intermediary dependency and enables smarter decision-making for rural farming communities',
+    tech: ['Spring Boot', 'React.js', 'MySQL'],
     highlights: [
       'Role-based access control for farmers and buyers',
       'Spring Boot REST API backend',
       'React.js responsive frontend',
       'MySQL relational database design',
+      'Integrated decision support for market insights',
     ],
     color: '#34D399',
     accentColor: '#059669',
@@ -121,7 +130,7 @@ export const EXPERIENCE = [
     company: 'Sclera VDMS',
     type: 'Apprenticeship',
     period: 'Feb 2026 – Present',
-    location: 'Karnataka, India',
+    location: 'Mangalore, India',
     description:
       'Embedded in a real-world product engineering team, gaining hands-on exposure to how production-grade backend systems are structured, maintained, and scaled.',
     highlights: [

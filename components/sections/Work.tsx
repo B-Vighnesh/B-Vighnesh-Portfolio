@@ -76,9 +76,7 @@ export default function Work() {
           marginBottom: '4rem',
         }}
       >
-        Not side-projects for the sake of it — applications built to solve real problems, 
-        designed from database schema to user interface.
-      </p>
+        Not side projects for the sake of it, applications built to solve real problems, designed end-to-end from database schema to user interface.      </p>
 
       {/* Project Cards */}
       <div style={{ display: 'flex', flexDirection: 'column', gap: '2rem' }}>

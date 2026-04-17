@@ -86,13 +86,14 @@ export default function Origin() {
               marginBottom: '1.5rem',
             }}
           >
-            I&apos;m a Computer Science engineering student with a strong pull toward backend systems. 
-            Not the kind that just learns syntax — the kind that wants to understand{' '}
+            I&apos;m a Computer Science engineering student with a strong pull toward backend systems.
+            Not the kind that just learns syntax, the kind that wants to understand{' '}
             <em style={{ color: 'var(--text-primary)', fontStyle: 'normal', fontWeight: 500 }}>
               why a system is built the way it is
             </em>
-            , how data moves, and where things can break.
+            , how data flows across layers, how services communicate, and where things can break under real conditions.
           </p>
+
           <p
             className="reveal reveal-delay-3"
             style={{
@@ -102,21 +103,37 @@ export default function Origin() {
               marginBottom: '1.5rem',
             }}
           >
-            My approach is end-to-end: design the API, wire up the database, build the frontend, 
-            and ship something that actually works in the real world. Less theory, more working code.
+            My approach is end-to-end: design the API, structure the backend, model the database, build the frontend,
+            and ship something that actually works in the real world. I work with technologies like Spring Boot,
+            React, and MySQL to build complete applications, focusing on clean architecture, performance, and reliability.
           </p>
+
           <p
             className="reveal reveal-delay-4"
             style={{
               fontSize: '1.125rem',
               color: 'var(--text-secondary)',
               lineHeight: 1.8,
+              marginBottom: '1.5rem',
             }}
           >
-            I'm currently an apprentice at{' '}
-            <span style={{ color: 'var(--accent-primary)', fontWeight: 600 }}>Sclera VDMS</span>
-            , learning what backend development looks like inside a real product team — not a 
-            classroom project.
+            Along the way, I&apos;ve built a strong foundation in data structures, algorithms, OOP, DBMS, and operating systems,
+            which helps me think beyond code and understand how systems behave internally.
+            Recently, I&apos;ve also started exploring Python and machine learning to expand into data-driven development.
+          </p>
+
+          <p
+            className="reveal reveal-delay-5"
+            style={{
+              fontSize: '1.125rem',
+              color: 'var(--text-secondary)',
+              lineHeight: 1.8,
+            }}
+          >
+            I&apos;m currently an apprentice at{' '}
+            <span style={{ color: 'var(--accent-primary)', fontWeight: 600 }}>Sclera VDMS</span>,
+            working within a real product environment — contributing to backend systems, understanding production workflows,
+            and learning how scalable software is built and maintained in industry.
           </p>
 
           {/* Quick stats */}
@@ -131,7 +148,7 @@ export default function Origin() {
           >
             {[
               { number: '3+', label: 'Projects Built' },
-              { number: '2', label: 'Years of Learning' },
+              { number: '4', label: 'Years of Learning' },
               { number: '5+', label: 'Technologies' },
             ].map((stat) => (
               <div key={stat.label}>
