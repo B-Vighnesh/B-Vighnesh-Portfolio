@@ -130,7 +130,6 @@ export default function Contact() {
         {[
           { label: 'Location', value: 'Mangalore, India' },
           { label: 'Phone', value: IDENTITY.phone },
-          { label: 'Status', value: 'Open to Opportunities' },
         ].map((item, i) => (
           <div
             key={item.label}
