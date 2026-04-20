@@ -68,6 +68,7 @@
 html {
   scroll-behavior: smooth;
   -webkit-text-size-adjust: 100%;
+  overflow-x: hidden;
 }
 
 body {
@@ -157,10 +158,12 @@ h1, h2, h3, h4, h5, h6 {
   transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
 }
 
-.card-glass:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 20px 60px var(--glow);
-  border-color: var(--accent-primary);
+@media (hover: hover) {
+  .card-glass:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 20px 60px var(--glow);
+    border-color: var(--accent-primary);
+  }
 }
 
 /* ═══════════════════════════════════════════════
@@ -245,6 +248,8 @@ h1, h2, h3, h4, h5, h6 {
   top: 0;
   left: 0;
   right: 0;
+  width: 100%;
+  box-sizing: border-box;
   z-index: 100;
   padding: 1rem 2rem;
   display: flex;
@@ -389,11 +394,13 @@ h1, h2, h3, h4, h5, h6 {
   transition: all 0.3s ease;
 }
 
-.contact-link:hover {
-  border-color: var(--accent-primary);
-  color: var(--accent-primary);
-  transform: translateX(6px);
-  box-shadow: 0 8px 24px var(--glow);
+@media (hover: hover) {
+  .contact-link:hover {
+    border-color: var(--accent-primary);
+    color: var(--accent-primary);
+    transform: translateX(4px);
+    box-shadow: 0 8px 24px var(--glow);
+  }
 }
 
 /* ═══════════════════════════════════════════════

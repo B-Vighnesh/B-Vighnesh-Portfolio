@@ -23,6 +23,29 @@ export default function Navbar() {
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
 
+  // Lock body scroll when mobile menu is open and compensate for scrollbar width
+  // to prevent the fixed navbar from jumping left/right.
+  useEffect(() => {
+    if (menuOpen) {
+      const scrollbarWidth = window.innerWidth - document.documentElement.clientWidth;
+      document.body.style.overflow = 'hidden';
+      document.body.style.paddingRight = `${scrollbarWidth}px`;
+      if (navRef.current) {
+        navRef.current.style.paddingRight = `calc(2rem + ${scrollbarWidth}px)`;
+      }
+    } else {
+      document.body.style.overflow = '';
+      document.body.style.paddingRight = '';
+      if (navRef.current) {
+        navRef.current.style.paddingRight = '';
+      }
+    }
+    return () => {
+      document.body.style.overflow = '';
+      document.body.style.paddingRight = '';
+    };
+  }, [menuOpen]);
+
   const toggleTheme = () => {
     const next = theme === 'dark' ? 'light' : 'dark';
     setTheme(next);
@@ -42,6 +65,7 @@ export default function Navbar() {
         ref={navRef}
         className={`navbar ${scrolled ? 'scrolled' : ''}`}
         aria-label="Main navigation"
+        style={{ width: '100%', boxSizing: 'border-box' }}
       >
         {/* Logo */}
         <button
