@@ -150,10 +150,10 @@ function ProjectCard({
           background: 'none',
           border: 'none',
           cursor: 'pointer',
-          padding: 'clamp(1.5rem, 3vw, 2rem)',
+          padding: 'clamp(1rem, 3vw, 2rem)',
           display: 'flex',
-          alignItems: 'center',
-          gap: '1.5rem',
+          alignItems: 'flex-start',
+          gap: '1rem',
           textAlign: 'left',
         }}
         aria-expanded={isActive}
@@ -163,24 +163,25 @@ function ProjectCard({
         <div
           style={{
             flexShrink: 0,
-            width: '56px',
-            height: '56px',
-            borderRadius: '14px',
+            width: '48px',
+            height: '48px',
+            borderRadius: '12px',
             background: `${project.color}18`,
             border: `1px solid ${project.color}35`,
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
-            fontSize: '1.5rem',
+            fontSize: '1.3rem',
             transition: 'transform 0.3s ease',
             transform: isActive ? 'scale(1.1)' : 'scale(1)',
+            marginTop: '2px',
           }}
         >
           {project.icon}
         </div>
 
-        {/* Title block */}
-        <div style={{ flex: 1 }}>
+        {/* Title block + mobile tech pills */}
+        <div style={{ flex: 1, minWidth: 0 }}>
           <div
             style={{
               fontFamily: 'var(--font-mono)',
@@ -196,30 +197,57 @@ function ProjectCard({
           <h3
             style={{
               fontFamily: 'var(--font-syne)',
-              fontSize: 'clamp(1.3rem, 2.5vw, 1.8rem)',
+              fontSize: 'clamp(1.15rem, 4vw, 1.8rem)',
               fontWeight: 800,
               letterSpacing: '-0.03em',
               color: 'var(--text-primary)',
-              marginBottom: '0.25rem',
+              marginBottom: '0.2rem',
+              wordBreak: 'break-word',
             }}
           >
             {project.title}
           </h3>
           <p
             style={{
-              fontSize: '0.9rem',
+              fontSize: '0.82rem',
               color: 'var(--text-muted)',
               fontFamily: 'var(--font-mono)',
+              lineHeight: 1.4,
+              marginBottom: '0.6rem',
             }}
           >
             {project.subtitle}
           </p>
+
+          {/* Tech pills — shown on mobile below subtitle */}
+          <div
+            className="flex md:hidden"
+            style={{ gap: '0.4rem', flexWrap: 'wrap' }}
+          >
+            {project.tech.slice(0, 3).map((t) => (
+              <span
+                key={t}
+                style={{
+                  fontFamily: 'var(--font-mono)',
+                  fontSize: '0.62rem',
+                  padding: '0.2rem 0.55rem',
+                  borderRadius: '100px',
+                  border: `1px solid ${project.color}35`,
+                  color: project.color,
+                  background: `${project.color}10`,
+                  whiteSpace: 'nowrap',
+                }}
+              >
+                {t}
+              </span>
+            ))}
+          </div>
         </div>
 
-        {/* Tech pills (desktop) */}
+        {/* Tech pills (desktop only, right column) */}
         <div
           className="hidden md:flex"
-          style={{ gap: '0.5rem', flexWrap: 'wrap', maxWidth: '280px' }}
+          style={{ gap: '0.5rem', flexWrap: 'wrap', maxWidth: '260px', alignSelf: 'center' }}
         >
           {project.tech.slice(0, 3).map((t) => (
             <span
@@ -244,17 +272,19 @@ function ProjectCard({
         <div
           style={{
             flexShrink: 0,
-            width: '32px',
-            height: '32px',
+            width: '30px',
+            height: '30px',
             borderRadius: '50%',
             border: `1px solid ${project.color}40`,
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
             color: project.color,
-            fontSize: '1rem',
-            transform: isActive ? 'rotate(180deg)' : 'none',
+            fontSize: '0.9rem',
+            transform: isActive ? 'rotate(180deg)' : 'rotate(0deg)',
             transition: 'transform 0.35s ease',
+            alignSelf: 'flex-start',
+            marginTop: '2px',
           }}
           aria-hidden="true"
         >
@@ -292,8 +322,8 @@ function ProjectCard({
           <div
             style={{
               display: 'grid',
-              gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))',
-              gap: '2rem',
+              gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 220px), 1fr))',
+              gap: '1.5rem',
             }}
           >
             {/* Description */}
