@@ -93,28 +93,37 @@ export default function Hero() {
         {/* Label */}
         <div
           className="reveal section-label"
-          style={{ marginBottom: '2rem', display: 'inline-block' }}
+          style={{
+            marginBottom: '2rem',
+            display: 'inline-flex',
+            flexDirection: 'column',
+            alignItems: 'center',
+            gap: '1rem',
+          }}
         >
           ⬡ Full Stack Developer · Mangalore, India
-          <br/>
           <a
             href="https://d3bnt1t6yx1asq.cloudfront.net/"
             target="_blank"
             rel="noopener noreferrer"
             style={{
-              padding: '0.9rem 2.5rem',
+              padding: '0.72rem 1.25rem',
               borderRadius: '100px',
               background: 'linear-gradient(135deg, #34D399, #059669)',
               color: '#06130E',
               fontFamily: 'var(--font-mono)',
-              fontSize: '0.9rem',
+              fontSize: 'clamp(0.72rem, 2.4vw, 0.82rem)',
               fontWeight: 700,
               textDecoration: 'none',
               transition: 'transform 0.3s ease, box-shadow 0.3s ease',
               letterSpacing: '0.02em',
               display: 'inline-flex',
               alignItems: 'center',
+              justifyContent: 'center',
               gap: '0.5rem',
+              textTransform: 'none',
+              lineHeight: 1.2,
+              maxWidth: 'min(100%, 320px)',
               boxShadow: '0 8px 32px rgba(52, 211, 153, 0.22)',
             }}
             onMouseEnter={(e) => {
