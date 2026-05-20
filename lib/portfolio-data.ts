@@ -86,7 +86,7 @@ export const PROJECTS = [
     accentColor: '#059669',
     icon: '🌾',
     github: '',
-    live: ''
+    live: 'https://d3bnt1t6yx1asq.cloudfront.net/'
   },
   {
     id: 'dark-pattern-detector',

@@ -105,6 +105,8 @@ interface Project {
   color: string;
   accentColor: string;
   icon: string;
+  github: string;
+  live: string;
 }
 
 function ProjectCard({
@@ -417,6 +419,32 @@ function ProjectCard({
                   </span>
                 ))}
               </div>
+
+              {project.live && (
+                <a
+                  href={project.live}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style={{
+                    display: 'inline-flex',
+                    alignItems: 'center',
+                    gap: '0.5rem',
+                    marginTop: '1.25rem',
+                    padding: '0.65rem 1rem',
+                    borderRadius: '8px',
+                    background: project.color,
+                    color: '#fff',
+                    fontFamily: 'var(--font-mono)',
+                    fontSize: '0.78rem',
+                    fontWeight: 600,
+                    letterSpacing: '0.02em',
+                    textDecoration: 'none',
+                    boxShadow: `0 8px 24px ${project.color}30`,
+                  }}
+                >
+                  Check out my deployed project →
+                </a>
+              )}
             </div>
           </div>
         </div>
