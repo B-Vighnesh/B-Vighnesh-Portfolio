@@ -294,6 +294,39 @@ function ProjectCard({
         </div>
       </button>
 
+      {project.live && (
+        <div
+          style={{
+            display: 'flex',
+            justifyContent: 'flex-start',
+            padding: '0 clamp(1rem, 3vw, 2rem) clamp(1rem, 3vw, 1.5rem)',
+          }}
+        >
+          <a
+            href={project.live}
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{
+              display: 'inline-flex',
+              alignItems: 'center',
+              gap: '0.5rem',
+              padding: '0.65rem 1rem',
+              borderRadius: '8px',
+              background: project.color,
+              color: '#06130E',
+              fontFamily: 'var(--font-mono)',
+              fontSize: '0.78rem',
+              fontWeight: 700,
+              letterSpacing: '0.02em',
+              textDecoration: 'none',
+              boxShadow: `0 8px 24px ${project.color}30`,
+            }}
+          >
+            Check out my deployed project →
+          </a>
+        </div>
+      )}
+
       {/* Expanded Detail */}
       <div
         id={`project-detail-${project.id}`}
@@ -420,31 +453,6 @@ function ProjectCard({
                 ))}
               </div>
 
-              {project.live && (
-                <a
-                  href={project.live}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  style={{
-                    display: 'inline-flex',
-                    alignItems: 'center',
-                    gap: '0.5rem',
-                    marginTop: '1.25rem',
-                    padding: '0.65rem 1rem',
-                    borderRadius: '8px',
-                    background: project.color,
-                    color: '#fff',
-                    fontFamily: 'var(--font-mono)',
-                    fontSize: '0.78rem',
-                    fontWeight: 600,
-                    letterSpacing: '0.02em',
-                    textDecoration: 'none',
-                    boxShadow: `0 8px 24px ${project.color}30`,
-                  }}
-                >
-                  Check out my deployed project →
-                </a>
-              )}
             </div>
           </div>
         </div>
