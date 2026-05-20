@@ -96,6 +96,38 @@ export default function Hero() {
           style={{ marginBottom: '2rem', display: 'inline-block' }}
         >
           ⬡ Full Stack Developer · Mangalore, India
+          <br/>
+          <a
+            href="https://d3bnt1t6yx1asq.cloudfront.net/"
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{
+              padding: '0.9rem 2.5rem',
+              borderRadius: '100px',
+              background: 'linear-gradient(135deg, #34D399, #059669)',
+              color: '#06130E',
+              fontFamily: 'var(--font-mono)',
+              fontSize: '0.9rem',
+              fontWeight: 700,
+              textDecoration: 'none',
+              transition: 'transform 0.3s ease, box-shadow 0.3s ease',
+              letterSpacing: '0.02em',
+              display: 'inline-flex',
+              alignItems: 'center',
+              gap: '0.5rem',
+              boxShadow: '0 8px 32px rgba(52, 211, 153, 0.22)',
+            }}
+            onMouseEnter={(e) => {
+              (e.currentTarget as HTMLAnchorElement).style.transform = 'translateY(-3px) scale(1.02)';
+              (e.currentTarget as HTMLAnchorElement).style.boxShadow = '0 16px 48px rgba(52, 211, 153, 0.3)';
+            }}
+            onMouseLeave={(e) => {
+              (e.currentTarget as HTMLAnchorElement).style.transform = '';
+              (e.currentTarget as HTMLAnchorElement).style.boxShadow = '0 8px 32px rgba(52, 211, 153, 0.22)';
+            }}
+          >
+            Check out my deployed project →
+          </a>
         </div>
 
         {/* Hero Name */}
@@ -208,37 +240,7 @@ export default function Hero() {
             Explore My Work ↓
           </button>
 
-          <a
-            href="https://d3bnt1t6yx1asq.cloudfront.net/"
-            target="_blank"
-            rel="noopener noreferrer"
-            style={{
-              padding: '0.9rem 2.5rem',
-              borderRadius: '100px',
-              background: 'linear-gradient(135deg, #34D399, #059669)',
-              color: '#06130E',
-              fontFamily: 'var(--font-mono)',
-              fontSize: '0.9rem',
-              fontWeight: 700,
-              textDecoration: 'none',
-              transition: 'transform 0.3s ease, box-shadow 0.3s ease',
-              letterSpacing: '0.02em',
-              display: 'inline-flex',
-              alignItems: 'center',
-              gap: '0.5rem',
-              boxShadow: '0 8px 32px rgba(52, 211, 153, 0.22)',
-            }}
-            onMouseEnter={(e) => {
-              (e.currentTarget as HTMLAnchorElement).style.transform = 'translateY(-3px) scale(1.02)';
-              (e.currentTarget as HTMLAnchorElement).style.boxShadow = '0 16px 48px rgba(52, 211, 153, 0.3)';
-            }}
-            onMouseLeave={(e) => {
-              (e.currentTarget as HTMLAnchorElement).style.transform = '';
-              (e.currentTarget as HTMLAnchorElement).style.boxShadow = '0 8px 32px rgba(52, 211, 153, 0.22)';
-            }}
-          >
-            Check out my deployed project →
-          </a>
+          
 
           <a
             href={`mailto:${IDENTITY.email}`}
