@@ -88,7 +88,7 @@ export const PROJECTS = [
     color: '#34D399',
     accentColor: '#059669',
     icon: '🌾',
-    github: '',
+    github: 'https://github.com/B-Vighnesh/AagriGgate',
     live: 'https://d3bnt1t6yx1asq.cloudfront.net/',
   },
   {
@@ -98,7 +98,7 @@ export const PROJECTS = [
     description:
       'A real-time system that identifies deceptive UX patterns on websites, the kind of tricks that manipulate users into unintended actions. Combines a DistilBERT ML model with a browser extension for instant detection. Includes a full stack interface for information, feedback, and extension access, while keeping all detection fully offline to ensure data privacy.',
     impact: 'Empowers users to browse the web with full awareness and privacy',
-    tech: ['Spring Boot', 'React.js', 'MySQL', 'DistilBERT', 'FastAPI', 'Browser Extension', 'NLP', 'Python'],
+    tech: ['Spring Boot', 'React.js', 'MySQL', 'DistilBERT', 'FastAPI', 'Browser Extension',  'Python'],
     highlights: [
       'ML-powered detection using DistilBERT transformer model',
       'FastAPI backend serving the ML model',
@@ -109,7 +109,7 @@ export const PROJECTS = [
     color: '#A78BFA',
     accentColor: '#7C3AED',
     icon: '🔍',
-    github: '',
+    github: 'https://github.com/B-Vighnesh/Dark-Pattern-Detector',
     live: '',
   },
   {
@@ -129,7 +129,7 @@ export const PROJECTS = [
     color: '#F5C842',
     accentColor: '#D97706',
     icon: '⚡',
-    github: '',
+    github: 'https://github.com/B-Vighnesh/EquiManage',
     live: '',
   },
 ] as const;
