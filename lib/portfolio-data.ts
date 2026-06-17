@@ -16,10 +16,11 @@ export const IDENTITY = {
   },
   resumePath: 'https://drive.usercontent.google.com/uc?id=1iMHx-6GyjqlKa0f_K5PeKtyaDVk1t2lQ&authuser=0&export=download',
 } as const;
-export const ROTATING_SUBTITLES = [
 
+export const ROTATING_SUBTITLES = [
   'Software Engineer',
-  'Full Stack Developer'
+  'Full Stack Developer',
+  'AI Systems Builder',
 ] as const;
 
 export const TIMELINE = [
@@ -45,21 +46,23 @@ export const TIMELINE = [
   },
   {
     year: '2026',
-    label: 'Software Product Developer ',
-    description: 'Working on backend systems at Sclera VDMS, contributing to real-world product development, API design, and system architecture.',
+    label: 'AI Systems & Architecture Engineering',
+    description: 'Working at Sclera VDMS — building MCP servers, LangChain & LangGraph-powered AI pipelines, and consolidating microservices into a robust monolithic backend to eliminate multi-tenancy complexity.',
   },
 ] as const;
 
 export const SKILLS = {
   Backend: ['Java', 'Spring Boot', 'REST APIs', 'Hibernate', 'C', 'Python'],
+  'AI & Agents': ['MCP', 'LangChain', 'LangGraph', 'FastAPI', 'NLP'],
   Frontend: ['React.js', 'HTML', 'CSS', 'JavaScript'],
   'Database & Tools': ['MySQL', 'Git', 'Postman', 'IntelliJ IDEA'],
-  Concepts: ['Data Structures', 'OOP', 'DBMS', 'OS', 'Computer Networks'],
+  Concepts: ['Data Structures', 'OOP', 'DBMS', 'OS', 'Computer Networks', 'System Design'],
   'Soft Skills': ['Team Collaboration', 'Communication', 'Problem-Solving', 'Adaptability'],
 } as const;
 
 export const SKILL_COLORS: Record<string, string> = {
   Backend: '#A78BFA',
+  'AI & Agents': '#22D3EE',
   Frontend: '#6B4FBB',
   'Database & Tools': '#F5C842',
   Concepts: '#34D399',
@@ -86,7 +89,7 @@ export const PROJECTS = [
     accentColor: '#059669',
     icon: '🌾',
     github: '',
-    live: 'https://d3bnt1t6yx1asq.cloudfront.net/'
+    live: 'https://d3bnt1t6yx1asq.cloudfront.net/',
   },
   {
     id: 'dark-pattern-detector',
@@ -107,7 +110,7 @@ export const PROJECTS = [
     accentColor: '#7C3AED',
     icon: '🔍',
     github: '',
-    live: ''
+    live: '',
   },
   {
     id: 'equimanage',
@@ -127,8 +130,8 @@ export const PROJECTS = [
     accentColor: '#D97706',
     icon: '⚡',
     github: '',
-    live: ''
-  }
+    live: '',
+  },
 ] as const;
 
 export const EXPERIENCE = [
@@ -139,12 +142,13 @@ export const EXPERIENCE = [
     period: 'Feb 2026 – Present',
     location: 'Mangalore, India',
     description:
-      'Embedded in a real-world product engineering team, gaining hands-on exposure to how production-grade backend systems are structured, maintained, and scaled.',
+      'Contributing to production-grade systems at Sclera VDMS — building AI agent pipelines, designing MCP servers, and consolidating a distributed microservices codebase into a unified monolithic architecture for improved maintainability and multi-tenancy resolution.',
     highlights: [
-      'Learning backend development in a live product environment',
-      'Understanding system architecture and component workflows',
-      'Studying complete product modules from specification to delivery',
-      'Observing end-to-end data flow — frontend → backend → database',
+      'Built MCP (Model Context Protocol) servers for AI agent tool integration',
+      'Developed LangChain & LangGraph-based AI pipelines and agentic workflows',
+      'Merged microservices codebase into main backend, eliminating multi-tenancy issues',
+      'Improved and stabilized the monolithic backend architecture for production scale',
+      'End-to-end data flow design — frontend → backend → AI agent → database',
     ],
   },
 ] as const;

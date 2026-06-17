@@ -5,6 +5,7 @@ import { SKILLS, SKILL_COLORS } from '@/lib/portfolio-data';
 
 const SKILL_ICONS: Record<string, string> = {
   Backend: '⚙️',
+  'AI & Agents': '🤖',
   Frontend: '🎨',
   'Database & Tools': '🗄️',
   Concepts: '🧠',

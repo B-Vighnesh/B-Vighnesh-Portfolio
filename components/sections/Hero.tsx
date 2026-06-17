@@ -1,7 +1,42 @@
 'use client';
 
 import { useEffect, useRef, useState } from 'react';
-import { IDENTITY, ROTATING_SUBTITLES } from '@/lib/portfolio-data';
+import { IDENTITY, ROTATING_SUBTITLES, SKILLS } from '@/lib/portfolio-data';
+
+// Flatten all skills into a single list for the floating bubbles
+const ALL_SKILLS = Object.values(SKILLS).flat();
+
+// Colour map per category for bubble tinting
+const CATEGORY_COLORS: Record<string, string> = {
+  Backend: '#A78BFA',
+  'AI & Agents': '#22D3EE',
+  Frontend: '#6B4FBB',
+  'Database & Tools': '#F5C842',
+  Concepts: '#34D399',
+  'Soft Skills': '#FB923C',
+};
+
+// Build a skill→colour lookup
+const SKILL_COLOR_MAP: Record<string, string> = {};
+(Object.entries(SKILLS) as [string, readonly string[]][]).forEach(([cat, skills]) => {
+  skills.forEach((s) => { SKILL_COLOR_MAP[s] = CATEGORY_COLORS[cat] ?? '#A78BFA'; });
+});
+
+// Stable deterministic positions so there's no hydration mismatch
+const BUBBLE_CONFIGS = ALL_SKILLS.map((skill, i) => {
+  const angle = (i / ALL_SKILLS.length) * 2 * Math.PI;
+  const radius = 38 + (i % 3) * 8; // 38–54 % of viewport
+  const cx = 50 + radius * Math.cos(angle);
+  const cy = 50 + radius * Math.sin(angle);
+  return {
+    skill,
+    x: Math.max(2, Math.min(96, cx)),
+    y: Math.max(8, Math.min(92, cy)),
+    delay: (i * 0.35) % 6,
+    duration: 5 + (i % 5),
+    size: i % 4 === 0 ? 'lg' : i % 3 === 0 ? 'md' : 'sm',
+  };
+});
 
 export default function Hero() {
   const [currentSubtitle, setCurrentSubtitle] = useState(0);
@@ -78,12 +113,15 @@ export default function Hero() {
       {/* Floating Grid Lines */}
       <GridLines />
 
+      {/* ── Floating Skill Bubbles ── */}
+      <FloatingSkills />
+
       {/* Main Content */}
       <div
         ref={contentRef}
         style={{
           position: 'relative',
-          zIndex: 2,
+          zIndex: 4,
           textAlign: 'center',
           maxWidth: '900px',
           width: '100%',
@@ -249,8 +287,6 @@ export default function Hero() {
             Explore My Work ↓
           </button>
 
-          
-
           <a
             href={`mailto:${IDENTITY.email}`}
             style={{
@@ -362,7 +398,82 @@ export default function Hero() {
           />
         </div>
       </div>
+
+      {/* Keyframes injected once */}
+      <style>{`
+        @keyframes bubbleFloat {
+          0%   { transform: translateY(0px) scale(1); opacity: 0.55; }
+          50%  { transform: translateY(-18px) scale(1.04); opacity: 0.85; }
+          100% { transform: translateY(0px) scale(1); opacity: 0.55; }
+        }
+        @keyframes bubbleFadeIn {
+          from { opacity: 0; transform: scale(0.7); }
+          to   { opacity: 0.6; transform: scale(1); }
+        }
+        .skill-bubble {
+          position: absolute;
+          border-radius: 100px;
+          font-family: var(--font-mono, monospace);
+          font-weight: 600;
+          letter-spacing: 0.04em;
+          white-space: nowrap;
+          pointer-events: none;
+          user-select: none;
+          animation: bubbleFadeIn 0.8s ease forwards, bubbleFloat var(--dur, 6s) ease-in-out infinite;
+          animation-delay: var(--delay, 0s), var(--delay, 0s);
+          backdrop-filter: blur(8px);
+          -webkit-backdrop-filter: blur(8px);
+          border: 1px solid var(--bubble-color, rgba(167,139,250,0.4));
+          background: rgba(10, 10, 20, 0.45);
+          color: var(--bubble-color, #A78BFA);
+          box-shadow: 0 0 12px var(--bubble-glow, rgba(167,139,250,0.15)), inset 0 1px 0 rgba(255,255,255,0.06);
+          transition: opacity 0.3s ease;
+          zIndex: 3;
+        }
+        .skill-bubble.size-sm { font-size: 0.6rem; padding: 0.3rem 0.75rem; }
+        .skill-bubble.size-md { font-size: 0.68rem; padding: 0.35rem 0.85rem; }
+        .skill-bubble.size-lg { font-size: 0.75rem; padding: 0.4rem 1rem; }
+      `}</style>
     </section>
+  );
+}
+
+/* ── Floating Skill Bubbles ──────────────────────── */
+function FloatingSkills() {
+  return (
+    <div
+      aria-hidden="true"
+      style={{
+        position: 'absolute',
+        inset: 0,
+        zIndex: 3,
+        pointerEvents: 'none',
+        overflow: 'hidden',
+      }}
+    >
+      {BUBBLE_CONFIGS.map(({ skill, x, y, delay, duration, size }) => {
+        const color = SKILL_COLOR_MAP[skill] ?? '#A78BFA';
+        const glow = color.replace(')', ', 0.2)').replace('rgb(', 'rgba(').replace('#', '').length > 10
+          ? color + '33'
+          : `${color}33`;
+        return (
+          <span
+            key={skill}
+            className={`skill-bubble size-${size}`}
+            style={{
+              left: `${x}%`,
+              top: `${y}%`,
+              '--bubble-color': color,
+              '--bubble-glow': glow,
+              '--delay': `${delay}s`,
+              '--dur': `${duration}s`,
+            } as React.CSSProperties}
+          >
+            {skill}
+          </span>
+        );
+      })}
+    </div>
   );
 }
 
@@ -419,7 +530,7 @@ function AuroraBackground() {
           height: '30vw',
           borderRadius: '50%',
           background:
-            'radial-gradient(circle, rgba(139,92,246,0.1) 0%, transparent 70%)',
+            'radial-gradient(circle, rgba(34,211,238,0.08) 0%, transparent 70%)',
           filter: 'blur(50px)',
           animation: 'float 12s ease-in-out infinite 2s',
         }}
