@@ -216,7 +216,7 @@ export default function Contact() {
               </div>
               <div
                 style={{
-                  fontSize: '0.9rem',
+                  fontSize: '0.6rem',
                   fontWeight: 500,
                   color: 'var(--text-primary)',
                 }}
