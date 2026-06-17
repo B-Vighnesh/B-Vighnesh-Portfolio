@@ -86,13 +86,7 @@ export default function Origin() {
               marginBottom: '1.5rem',
             }}
           >
-            I&apos;m a Computer Science engineering student with a strong pull toward backend systems.
-            Not the kind that just learns syntax, the kind that wants to understand{' '}
-            <em style={{ color: 'var(--text-primary)', fontStyle: 'normal', fontWeight: 500 }}>
-              why a system is built the way it is
-            </em>
-            , how data flows across layers, how services communicate, and where things can break under real conditions.
-          </p>
+            I am a Software Engineer with a strong pull toward backend systems not just how to write code, but how systems actually work: how data flows across layers, how services talk to each other, and where things break under real conditions.</p>
 
           <p
             className="reveal reveal-delay-3"
@@ -103,10 +97,7 @@ export default function Origin() {
               marginBottom: '1.5rem',
             }}
           >
-            My approach is end-to-end: design the API, structure the backend, model the database, build the frontend,
-            and ship something that actually works in the real world. I work with technologies like Spring Boot,
-            React, and MySQL to build complete applications, focusing on clean architecture, performance, and reliability.
-          </p>
+            My approach is end to end: design the API, structure the backend, model the database, build the frontend and ship something that works in the real world, using Spring Boot, Python, React, and MySQL, with a focus on clean architecture and performance.</p>
 
           <p
             className="reveal reveal-delay-4"
@@ -117,10 +108,7 @@ export default function Origin() {
               marginBottom: '1.5rem',
             }}
           >
-            Along the way, I&apos;ve built a strong foundation in data structures, algorithms, OOP, DBMS, and operating systems,
-            which helps me think beyond code and understand how systems behave internally.
-            Recently, I&apos;ve also started exploring Python and machine learning to expand into data-driven development.
-          </p>
+           That is backed by a solid grounding in data structures, algorithms, OOP, DBMS, and operating systems the fundamentals that make systems predictable, not just functional. I am now extending into machine learning, exploring concepts like RAG and MCP to build more intelligent, data-driven products.</p>
 
           <p
             className="reveal reveal-delay-5"
@@ -130,10 +118,7 @@ export default function Origin() {
               lineHeight: 1.8,
             }}
           >
-            I&apos;m currently an apprentice at{' '}
-            <span style={{ color: 'var(--accent-primary)', fontWeight: 600 }}>Sclera VDMS</span>,
-            working within a real product environment — contributing to backend systems, understanding production workflows,
-            and learning how scalable software is built and maintained in industry.
+            I am a Software Product Developer at Sclera VDMS. I have resolved version conflicts merging microservices into a monolithic backend, traced end-to-end data flow across a multi-module product, and am now researching MCP servers to bring LLM capabilities into it. 
           </p>
 
           {/* Quick stats */}

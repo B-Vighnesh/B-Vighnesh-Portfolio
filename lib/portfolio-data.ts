@@ -6,7 +6,7 @@ export const IDENTITY = {
   name: 'B Vighnesh Kumar',
   role: 'Full Stack Developer',
   location: 'Mangalore, India',
-  email: 'bvighneshkumar@gmail.com',
+  email: 'vighneshsheregar2004@gmail.com',
   phone: '+91 8618402581',
   tagline: 'I build backend systems and full stack applications that are reliable, scalable, and practical.',
   links: {
@@ -46,7 +46,7 @@ export const TIMELINE = [
   },
   {
     year: '2026',
-    label: 'AI Systems & Architecture Engineering',
+    label: 'Software Product Developer',
     description: 'Working at Sclera VDMS, building MCP servers, LangChain & LangGraph powered AI pipelines, and consolidating microservices into a robust monolithic backend to eliminate multi tenancy complexity.',
   },
 ] as const;
