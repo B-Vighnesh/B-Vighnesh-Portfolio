@@ -4,11 +4,11 @@ import { useEffect, useRef, useState } from 'react';
 import { IDENTITY, ROTATING_SUBTITLES } from '@/lib/portfolio-data';
 
 // ── Curated floating skill bubbles ─────────────────────
-// Hand-picked skills with icons and positions (% of viewport)
+// Official brand icons via Devicons CDN (github.com/devicons/devicon)
 const FLOATING_SKILLS = [
   {
     skill: 'Java',
-    icon: '☕',
+    icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original.svg',
     color: '#F89820',
     x: 6,
     y: 18,
@@ -17,7 +17,7 @@ const FLOATING_SKILLS = [
   },
   {
     skill: 'Spring Boot',
-    icon: '🌿',
+    icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/spring/spring-original.svg',
     color: '#6DB33F',
     x: 78,
     y: 14,
@@ -26,7 +26,7 @@ const FLOATING_SKILLS = [
   },
   {
     skill: 'React',
-    icon: '⚛️',
+    icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg',
     color: '#61DAFB',
     x: 82,
     y: 62,
@@ -35,8 +35,8 @@ const FLOATING_SKILLS = [
   },
   {
     skill: 'MySQL',
-    icon: '🗄️',
-    color: '#F5C842',
+    icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original.svg',
+    color: '#00758F',
     x: 5,
     y: 68,
     delay: 1.8,
@@ -44,7 +44,7 @@ const FLOATING_SKILLS = [
   },
   {
     skill: 'Python',
-    icon: '🐍',
+    icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg',
     color: '#3B82F6',
     x: 74,
     y: 83,
@@ -53,8 +53,8 @@ const FLOATING_SKILLS = [
   },
   {
     skill: 'Hibernate',
-    icon: '🔗',
-    color: '#A78BFA',
+    icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/hibernate/hibernate-plain.svg',
+    color: '#BCAE79',
     x: 8,
     y: 44,
     delay: 2.1,
@@ -484,7 +484,13 @@ function FloatingSkills() {
             opacity: 0,
           }}
         >
-          <span style={{ fontSize: '1rem', lineHeight: 1 }}>{icon}</span>
+          <img
+            src={icon}
+            alt={skill}
+            width={20}
+            height={20}
+            style={{ display: 'block', flexShrink: 0 }}
+          />
           <span>{skill}</span>
         </div>
       ))}
