@@ -197,7 +197,7 @@ export default function Hero() {
               (e.currentTarget as HTMLAnchorElement).style.boxShadow = '0 8px 32px rgba(52, 211, 153, 0.22)';
             }}
           >
-            Check out my deployed project →
+            Check out my deployed project → AagriGgate
           </a>
         </div>
 
