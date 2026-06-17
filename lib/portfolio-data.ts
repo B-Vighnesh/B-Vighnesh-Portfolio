@@ -47,13 +47,13 @@ export const TIMELINE = [
   {
     year: '2026',
     label: 'AI Systems & Architecture Engineering',
-    description: 'Working at Sclera VDMS — building MCP servers, LangChain & LangGraph-powered AI pipelines, and consolidating microservices into a robust monolithic backend to eliminate multi-tenancy complexity.',
+    description: 'Working at Sclera VDMS, building MCP servers, LangChain & LangGraph powered AI pipelines, and consolidating microservices into a robust monolithic backend to eliminate multi tenancy complexity.',
   },
 ] as const;
 
 export const SKILLS = {
   Backend: ['Java', 'Spring Boot', 'REST APIs', 'Hibernate', 'C', 'Python'],
-  'AI & Agents': ['MCP', 'LangChain', 'LangGraph', 'FastAPI', 'NLP'],
+  'AI & Agents': ['MCP', 'LangChain', 'LangGraph'],
   Frontend: ['React.js', 'HTML', 'CSS', 'JavaScript'],
   'Database & Tools': ['MySQL', 'Git', 'Postman', 'IntelliJ IDEA'],
   Concepts: ['Data Structures', 'OOP', 'DBMS', 'OS', 'Computer Networks', 'System Design'],
