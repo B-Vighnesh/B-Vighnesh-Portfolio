@@ -3,8 +3,27 @@
 import { useEffect, useRef, useState } from 'react';
 import { IDENTITY, ROTATING_SUBTITLES } from '@/lib/portfolio-data';
 
-// ── Curated floating skill bubbles ─────────────────────
-// Official brand icons via Devicons CDN (github.com/devicons/devicon)
+// ── Vertical scrolling skill columns ───────────────────
+// Left column scrolls TOP → BOTTOM | Right column scrolls BOTTOM → TOP
+const LEFT_SKILLS = [
+  { skill: 'Java',   icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original.svg',                                                               color: '#F89820' },
+  { skill: 'MySQL',  icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original.svg',                                                             color: '#00758F' },
+  { skill: 'C',      icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/c/c-original.svg',                                                                     color: '#A8B9CC' },
+  { skill: 'Git',    icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg',                                                                 color: '#F05032' },
+  { skill: 'AWS',    icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/amazonwebservices/amazonwebservices-plain-wordmark.svg',                               color: '#FF9900' },
+  { skill: 'VM',     icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/linux/linux-original.svg',                                                             color: '#4CAF50' },
+];
+
+const RIGHT_SKILLS = [
+  { skill: 'Spring Boot', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/spring/spring-original.svg',    color: '#6DB33F' },
+  { skill: 'React',       icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg',      color: '#61DAFB' },
+  { skill: 'Python',      icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg',    color: '#FFD43B' },
+  { skill: 'HTML',        icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg',      color: '#E34F26' },
+  { skill: 'CSS',         icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg',        color: '#1572B6' },
+  { skill: 'Postman',     icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postman/postman-original.svg',  color: '#FF6C37' },
+];
+
+// (legacy kept for type-compat — no longer used for rendering)
 const FLOATING_SKILLS = [
   {
     skill: 'Java',
@@ -52,9 +71,9 @@ const FLOATING_SKILLS = [
     duration: 7.5,
   },
   {
-    skill: 'Hibernate',
-    icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/hibernate/hibernate-plain.svg',
-    color: '#BCAE79',
+    skill: 'AWS',
+    icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/amazonwebservices/amazonwebservices-plain-wordmark.svg',
+    color: '#FF9900',
     x: 3,
     y: 38,
     delay: 2.1,
@@ -425,75 +444,92 @@ export default function Hero() {
 
       {/* Keyframes injected once */}
       <style>{`
-        @keyframes bubbleFloat {
-          0%   { transform: translateY(0px) scale(1); }
-          50%  { transform: translateY(-20px) scale(1.03); }
-          100% { transform: translateY(0px) scale(1); }
+        @keyframes marqueeDown {
+          0%   { transform: translateY(-50%); }
+          100% { transform: translateY(0%); }
         }
-        @keyframes bubbleFadeIn {
-          from { opacity: 0; transform: scale(0.75) translateY(10px); }
-          to   { opacity: 1; transform: scale(1) translateY(0px); }
+        @keyframes marqueeUp {
+          0%   { transform: translateY(0%); }
+          100% { transform: translateY(-50%); }
         }
       `}</style>
     </section>
   );
 }
 
-/* ── Floating Skill Bubbles ──────────────────────── */
+/* ── Skill Pill ──────────────────────────────────────── */
+function SkillPill({ skill, icon, color }: { skill: string; icon: string; color: string }) {
+  return (
+    <div
+      style={{
+        display: 'inline-flex',
+        alignItems: 'center',
+        gap: '0.6rem',
+        padding: '0.65rem 1.2rem',
+        borderRadius: '100px',
+        backdropFilter: 'blur(14px)',
+        WebkitBackdropFilter: 'blur(14px)',
+        background: 'rgba(8, 8, 18, 0.70)',
+        border: `1.5px solid ${color}65`,
+        boxShadow: `0 0 18px ${color}35, 0 6px 24px rgba(0,0,0,0.35), inset 0 1px 0 rgba(255,255,255,0.08)`,
+        fontFamily: 'var(--font-mono, monospace)',
+        fontSize: '0.85rem',
+        fontWeight: 700,
+        letterSpacing: '0.04em',
+        color: color,
+        whiteSpace: 'nowrap',
+        userSelect: 'none',
+      }}
+    >
+      <img src={icon} alt={skill} width={24} height={24} style={{ display: 'block', flexShrink: 0 }} />
+      <span>{skill}</span>
+    </div>
+  );
+}
+
+/* ── Floating Skill Columns ──────────────────────────── */
 function FloatingSkills() {
+  const colStyle: React.CSSProperties = {
+    position: 'absolute',
+    top: 0,
+    bottom: 0,
+    overflow: 'hidden',
+    display: 'flex',
+    flexDirection: 'column',
+    pointerEvents: 'none',
+  };
+
+  const trackStyle = (anim: string): React.CSSProperties => ({
+    display: 'flex',
+    flexDirection: 'column',
+    gap: '1rem',
+    padding: '0.5rem 0',
+    animation: `${anim} 18s linear infinite`,
+    willChange: 'transform',
+  });
+
   return (
     <div
       aria-hidden="true"
-      style={{
-        position: 'absolute',
-        inset: 0,
-        zIndex: 3,
-        pointerEvents: 'none',
-        overflow: 'hidden',
-      }}
+      style={{ position: 'absolute', inset: 0, zIndex: 3, pointerEvents: 'none', overflow: 'hidden' }}
     >
-      {FLOATING_SKILLS.map(({ skill, icon, color, x, y, delay, duration }) => (
-        <div
-          key={skill}
-          style={{
-            position: 'absolute',
-            left: `${x}%`,
-            top: `${y}%`,
-            display: 'inline-flex',
-            alignItems: 'center',
-            gap: '0.65rem',
-            padding: '0.75rem 1.4rem',
-            borderRadius: '100px',
-            backdropFilter: 'blur(16px)',
-            WebkitBackdropFilter: 'blur(16px)',
-            background: `rgba(8, 8, 18, 0.72)`,
-            border: `1.5px solid ${color}70`,
-            boxShadow: `0 0 20px ${color}40, 0 8px 32px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.1)`,
-            fontFamily: 'var(--font-mono, monospace)',
-            fontSize: '0.92rem',
-            fontWeight: 700,
-            letterSpacing: '0.04em',
-            color: color,
-            whiteSpace: 'nowrap',
-            animationName: 'bubbleFadeIn, bubbleFloat',
-            animationDuration: `1s, ${duration}s`,
-            animationTimingFunction: 'cubic-bezier(0.34,1.56,0.64,1), ease-in-out',
-            animationDelay: `${delay}s, ${delay}s`,
-            animationIterationCount: '1, infinite',
-            animationFillMode: 'both',
-            opacity: 0,
-          }}
-        >
-          <img
-            src={icon}
-            alt={skill}
-            width={28}
-            height={28}
-            style={{ display: 'block', flexShrink: 0 }}
-          />
-          <span>{skill}</span>
+      {/* LEFT column — scrolls TOP → BOTTOM (items fall down) */}
+      <div style={{ ...colStyle, left: '1rem' }}>
+        <div style={trackStyle('marqueeDown')}>
+          {[...LEFT_SKILLS, ...LEFT_SKILLS].map((s, i) => (
+            <SkillPill key={`l-${i}`} {...s} />
+          ))}
         </div>
-      ))}
+      </div>
+
+      {/* RIGHT column — scrolls BOTTOM → TOP (items rise up) */}
+      <div style={{ ...colStyle, right: '1rem' }}>
+        <div style={trackStyle('marqueeUp')}>
+          {[...RIGHT_SKILLS, ...RIGHT_SKILLS].map((s, i) => (
+            <SkillPill key={`r-${i}`} {...s} />
+          ))}
+        </div>
+      </div>
     </div>
   );
 }

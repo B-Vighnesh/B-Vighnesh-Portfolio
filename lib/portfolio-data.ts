@@ -4,11 +4,11 @@
 
 export const IDENTITY = {
   name: 'B Vighnesh Kumar',
-  role: 'Full Stack Developer',
+  role: 'Full Stack Developer (R&D)',
   location: 'Mangalore, India',
   email: 'vighneshsheregar2004@gmail.com',
   phone: '+91 8618402581',
-  tagline: 'I build backend systems and full stack applications that are reliable, scalable, and practical.',
+  tagline: 'Backend developer specializing in Java, Spring Boot, and REST APIs — building and deploying production applications on AWS with full-stack depth.',
   links: {
     github: 'https://github.com/B-Vighnesh',
     linkedin: 'https://linkedin.com/in/b-vighnesh-kumar',
@@ -18,9 +18,9 @@ export const IDENTITY = {
 } as const;
 
 export const ROTATING_SUBTITLES = [
-  'Software Engineer',
   'Full Stack Developer',
-  'AI Systems Builder',
+  'Backend Engineer',
+  'R&D Developer @ Sclera',
 ] as const;
 
 export const TIMELINE = [
@@ -37,36 +37,41 @@ export const TIMELINE = [
   {
     year: '2024',
     label: 'Full Stack Development',
-    description: 'Learned and applied technologies like Hibernate, Spring Boot, and React to build full stack web applications.',
+    description: 'Learned and applied technologies like Hibernate/JPA, Spring Boot, and React.js to build full stack web applications with JWT auth and role-based access control.',
   },
   {
     year: '2025',
-    label: 'Exploring AI & Machine Learning',
-    description: 'Started working with Python and machine learning concepts alongside full stack development.',
+    label: 'Production & Cloud',
+    description: 'Deployed production applications on AWS (EC2, CloudFront, S3) and deepened backend architecture knowledge with REST API design and MySQL database modelling.',
   },
   {
-    year: '2026',
-    label: 'Software Product Developer',
-    description: 'Working at Sclera VDMS, building MCP servers, LangChain & LangGraph powered AI pipelines, and consolidating microservices into a robust monolithic backend to eliminate multi tenancy complexity.',
+    year: 'Feb–Jul 2026',
+    label: 'Software Product Developer Apprentice',
+    description: 'At Sclera — consolidated 50+ microservice endpoints into the monolithic backend, resolved multi-tenancy conflicts, and researched MCP server integration for AI-powered product features.',
+  },
+  {
+    year: 'Aug 2026',
+    label: 'Full Stack Developer — R&D',
+    description: 'Promoted to R&D at Sclera — evaluating OPC UA client libraries (asyncua / open62541), building real-time data connectors, and testing against Prosys OPC UA Simulation Server for production deployment.',
   },
 ] as const;
 
 export const SKILLS = {
-  Backend: ['Java', 'Spring Boot', 'REST APIs', 'Hibernate', 'C', 'Python'],
-  'AI & Agents': ['MCP', 'LangChain', 'LangGraph'],
-  Frontend: ['React.js', 'HTML', 'CSS', 'JavaScript'],
-  'Database & Tools': ['MySQL', 'Git', 'Postman', 'IntelliJ IDEA'],
-  Concepts: ['Data Structures', 'OOP', 'DBMS', 'OS', 'Computer Networks', 'System Design'],
-  'Soft Skills': ['Team Collaboration', 'Communication', 'Problem-Solving', 'Adaptability'],
+  Backend: ['Java', 'Spring Boot', 'REST APIs', 'Hibernate/JPA', 'C', 'Python'],
+  Frontend: ['React.js', 'HTML5', 'CSS3', 'JavaScript'],
+  'Cloud & Database': ['AWS EC2', 'CloudFront', 'S3', 'MySQL'],
+  'Tools & Auth': ['Git', 'Postman', 'JWT', 'Role-Based Access Control'],
+  'R&D & Protocols': ['OPC UA', 'asyncua', 'open62541', 'MCP'],
+  Concepts: ['Data Structures', 'OOP', 'DBMS', 'System Design', 'REST Architecture'],
 } as const;
 
 export const SKILL_COLORS: Record<string, string> = {
   Backend: '#A78BFA',
-  'AI & Agents': '#22D3EE',
   Frontend: '#6B4FBB',
-  'Database & Tools': '#F5C842',
-  Concepts: '#34D399',
-  'Soft Skills': '#FB923C',
+  'Cloud & Database': '#F59E0B',
+  'Tools & Auth': '#34D399',
+  'R&D & Protocols': '#22D3EE',
+  Concepts: '#FB923C',
 };
 
 export const PROJECTS = [
@@ -77,19 +82,19 @@ export const PROJECTS = [
     description:
       'A full stack marketplace that connects farmers directly with buyers, removing costly middlemen and bringing transparency to agricultural trade. Also functions as a decision support platform by providing market insights and guidance to help farmers make informed selling decisions. Built with role-based access so farmers manage their listings and buyers browse and transact with confidence.',
     impact: 'Reduces intermediary dependency and enables smarter decision-making for rural farming communities',
-    tech: ['Spring Boot', 'React.js', 'MySQL'],
+    tech: ['Spring Boot', 'React.js', 'MySQL', 'JWT', 'AWS CloudFront'],
     highlights: [
-      'Role-based access control for farmers and buyers',
-      'Spring Boot REST API backend',
+      'JWT-based authentication with role-based access control for farmers and buyers',
+      'Spring Boot REST API backend with Hibernate/JPA',
       'React.js responsive frontend',
       'MySQL relational database design',
-      'Integrated decision support for market insights',
+      'Deployed on AWS — EC2 backend, CloudFront CDN for frontend',
     ],
     color: '#34D399',
     accentColor: '#059669',
     icon: '🌾',
     github: 'https://github.com/B-Vighnesh/AagriGgate',
-    live: 'https://d3bnt1t6yx1asq.cloudfront.net/',
+    live: 'https://aagriggate.vercel.app',
   },
   {
     id: 'dark-pattern-detector',
@@ -98,7 +103,7 @@ export const PROJECTS = [
     description:
       'A real-time system that identifies deceptive UX patterns on websites, the kind of tricks that manipulate users into unintended actions. Combines a DistilBERT ML model with a browser extension for instant detection. Includes a full stack interface for information, feedback, and extension access, while keeping all detection fully offline to ensure data privacy.',
     impact: 'Empowers users to browse the web with full awareness and privacy',
-    tech: ['Spring Boot', 'React.js', 'MySQL', 'DistilBERT', 'FastAPI', 'Browser Extension',  'Python'],
+    tech: ['Spring Boot', 'React.js', 'MySQL', 'DistilBERT', 'FastAPI', 'Browser Extension', 'Python'],
     highlights: [
       'ML-powered detection using DistilBERT transformer model',
       'FastAPI backend serving the ML model',
@@ -136,46 +141,60 @@ export const PROJECTS = [
 
 export const EXPERIENCE = [
   {
-    role: 'Software Product Developer',
-    company: 'Sclera VDMS',
-    type: 'Apprenticeship',
-    period: 'Feb 2026 – Present',
+    role: 'Full Stack Developer (R&D)',
+    company: 'Sclera',
+    type: 'Full-time',
+    period: 'Aug 2026 – Present',
     location: 'Mangalore, India',
     description:
-      'Contributing to production-grade systems at Sclera VDMS — building AI agent pipelines, designing MCP servers, and consolidating a distributed microservices codebase into a unified monolithic architecture for improved maintainability and multi-tenancy resolution.',
+      'Working in the R&D team at Sclera, building an OPC UA client connector end-to-end — from a Python prototype through a production C implementation, real-server validation, and full Spring Boot backend integration.',
     highlights: [
-      'Built MCP (Model Context Protocol) servers for AI agent tool integration',
-      'Developed LangChain & LangGraph-based AI pipelines and agentic workflows',
-      'Merged microservices codebase into main backend, eliminating multi-tenancy issues',
-      'Improved and stabilized the monolithic backend architecture for production scale',
-      'End-to-end data flow design — frontend → backend → AI agent → database',
+      'Phase 1 — Prototype: Built the OPC UA client connector in asyncua (Python), connecting to the server, reading real-time data, and passing it through the product pipeline',
+      'Phase 2 — Production: Ported the connector to open62541 (C) for performance, stability, and production-grade reliability',
+      'Phase 3 — Validation: Tested the open62541 connector against a real Prosys OPC UA Simulation Server to validate accurate data retrieval and end-to-end correctness',
+      'Phase 4 — Integration: Integrated the validated OPC UA data pipeline into the Spring Boot backend, enabling seamless real-time data flow into the product',
+    ],
+  },
+  {
+    role: 'Software Product Developer Apprentice',
+    company: 'Sclera',
+    type: 'Apprenticeship',
+    period: 'Feb 2026 – Jul 2026',
+    location: 'Mangalore, India',
+    description:
+      'Consolidated an entire microservice codebase into the main monolithic backend and researched AI/MCP integration for product features.',
+    highlights: [
+      'Consolidated a full microservice (50+ endpoints) into the main monolithic backend by diagnosing and resolving a multi-tenancy version conflict',
+      'Ensured compatibility across both codebases without breaking existing functionality',
+      'Analyzed end-to-end data flow across frontend, backend, and database layers of a multi-module product',
+      'Researched MCP (Model Context Protocol) servers to evaluate feasibility of integrating LLM capabilities with the VDMS database',
     ],
   },
 ] as const;
 
 export const VISION_STATEMENT =
-  'I focus on building systems that are simple, functional, and reliable.';
+  'I build systems that are production-ready, well-architected, and solve real problems.';
 
 export const VISION_PILLARS = [
   {
+    icon: '☁️',
+    title: 'Cloud & Deployment',
+    description: 'Building and deploying production-grade applications on AWS — EC2, CloudFront, and S3 for real-world scale.',
+  },
+  {
     icon: '⚙️',
     title: 'System Design',
-    description: 'Learning how to design scalable, maintainable backend architectures that grow with real product needs.',
+    description: 'Designing scalable, maintainable backend architectures — from monoliths to distributed systems and back.',
   },
   {
-    icon: '🧠',
-    title: 'DSA & Fundamentals',
-    description: 'Strengthening problem-solving through consistent practice in data structures and algorithms.',
-  },
-  {
-    icon: '🔨',
-    title: 'Practical Projects',
-    description: 'Building applications that solve real problems — not toy projects, but systems with genuine utility.',
+    icon: '🔬',
+    title: 'R&D Engineering',
+    description: 'Evaluating protocols, prototyping with Python, and porting to C for production — bridging research and real product.',
   },
   {
     icon: '📈',
     title: 'Continuous Growth',
-    description: 'Improving backend and full stack depth through real-world exposure and deliberate learning.',
+    description: 'Deepening backend, cloud, and systems depth through real-world product exposure and deliberate learning.',
   },
 ] as const;
 
