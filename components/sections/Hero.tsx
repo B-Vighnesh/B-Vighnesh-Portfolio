@@ -182,9 +182,9 @@ export default function Hero() {
             gap: '1rem',
           }}
         >
-          ⬡ Full Stack Developer · Mangalore, India
+          ⬡ Full Stack Developer · Bangalore, India
           <a
-            href="https://d3bnt1t6yx1asq.cloudfront.net/"
+            href="https://aagriggate.vercel.app/"
             target="_blank"
             rel="noopener noreferrer"
             style={{

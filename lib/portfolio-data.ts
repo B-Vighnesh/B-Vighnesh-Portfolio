@@ -5,7 +5,7 @@
 export const IDENTITY = {
   name: 'B Vighnesh Kumar',
   role: 'Full Stack Developer (R&D)',
-  location: 'Mangalore, India',
+  location: 'Bangalores, India',
   email: 'vighneshsheregar2004@gmail.com',
   phone: '+91 8618402581',
   tagline: 'Backend developer specializing in Java, Spring Boot, and REST APIs — building and deploying production applications on AWS with full-stack depth.',
@@ -94,7 +94,7 @@ export const PROJECTS = [
     accentColor: '#059669',
     icon: '🌾',
     github: 'https://github.com/B-Vighnesh/AagriGgate',
-    live: 'https://aagriggate.vercel.app',
+    live: 'c',
   },
   {
     id: 'dark-pattern-detector',
@@ -145,7 +145,7 @@ export const EXPERIENCE = [
     company: 'Sclera',
     type: 'Full-time',
     period: 'Aug 2026 – Present',
-    location: 'Mangalore, India',
+    location: 'Bangslore, India',
     description:
       'Working in the R&D team at Sclera, building an OPC UA client connector end-to-end — from a Python prototype through a production C implementation, real-server validation, and full Spring Boot backend integration.',
     highlights: [
@@ -160,7 +160,7 @@ export const EXPERIENCE = [
     company: 'Sclera',
     type: 'Apprenticeship',
     period: 'Feb 2026 – Jul 2026',
-    location: 'Mangalore, India',
+    location: 'Bangalore, India',
     description:
       'Consolidated an entire microservice codebase into the main monolithic backend and researched AI/MCP integration for product features.',
     highlights: [
