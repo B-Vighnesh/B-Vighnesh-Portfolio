@@ -128,7 +128,7 @@ export default function Contact() {
         }}
       >
         {[
-          { label: 'Location', value: 'Mangalore, India' },
+          { label: 'Location', value: 'Bangalore, India' },
           { label: 'Phone', value: IDENTITY.phone },
         ].map((item, i) => (
           <div
@@ -309,7 +309,7 @@ export default function Contact() {
             letterSpacing: '0.06em',
           }}
         >
-          Mangalore, India
+          Bangalore, India
         </span>
       </div>
     </section>

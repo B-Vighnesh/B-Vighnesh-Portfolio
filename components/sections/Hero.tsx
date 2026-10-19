@@ -219,6 +219,7 @@ export default function Hero() {
             Check out my deployed project → AagriGgate
           </a>
         </div>
+        
 
         {/* Hero Name */}
         <h1

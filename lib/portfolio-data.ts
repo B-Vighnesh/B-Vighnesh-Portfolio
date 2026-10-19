@@ -5,10 +5,11 @@
 export const IDENTITY = {
   name: 'B Vighnesh Kumar',
   role: 'Full Stack Developer (R&D)',
-  location: 'Bangalores, India',
+  location: 'Bangalore, India',
   email: 'vighneshsheregar2004@gmail.com',
+  emailAlt: 'bvighneshkumar@gmail.com',
   phone: '+91 8618402581',
-  tagline: 'Backend developer specializing in Java, Spring Boot, and REST APIs — building and deploying production applications on AWS with full-stack depth.',
+  tagline: 'Backend developer specializing in Java, Spring Boot, and REST APIs. Building and deploying production applications on AWS with full-stack depth.',
   links: {
     github: 'https://github.com/B-Vighnesh',
     linkedin: 'https://linkedin.com/in/b-vighnesh-kumar',
@@ -27,32 +28,32 @@ export const TIMELINE = [
   {
     year: '2022',
     label: 'Started Engineering',
-    description: 'Began Computer Science Engineering and learned core programming languages including Java and C.',
+    description: 'Began Computer Science Engineering and got my first real grip on programming through Java and C.',
   },
   {
     year: '2023',
     label: 'Core Computer Science',
-    description: 'Built strong foundations in OOP, Data Structures & Algorithms, DBMS, and Operating Systems.',
+    description: 'Built a solid foundation in OOP, Data Structures, Algorithms, DBMS, and Operating Systems concepts that I still rely on every day.',
   },
   {
     year: '2024',
     label: 'Full Stack Development',
-    description: 'Learned and applied technologies like Hibernate/JPA, Spring Boot, and React.js to build full stack web applications with JWT auth and role-based access control.',
+    description: 'Picked up Hibernate/JPA, Spring Boot, and React.js to build complete web applications with JWT authentication and role-based access control.',
   },
   {
     year: '2025',
-    label: 'Production & Cloud',
-    description: 'Deployed production applications on AWS (EC2, CloudFront, S3) and deepened backend architecture knowledge with REST API design and MySQL database modelling.',
+    label: 'Production and Cloud',
+    description: 'Deployed production applications on AWS using EC2, CloudFront, and S3. Got deeper into REST API design and MySQL database modelling at scale.',
   },
   {
-    year: 'Feb–Jul 2026',
+    year: 'Feb to Jul 2026',
     label: 'Software Product Developer Apprentice',
-    description: 'At Sclera — consolidated 50+ microservice endpoints into the monolithic backend, resolved multi-tenancy conflicts, and researched MCP server integration for AI-powered product features.',
+    description: 'At Sclera, consolidated 50 plus microservice endpoints into the monolithic backend, resolved multi-tenancy conflicts, and researched MCP server integration for AI-powered product features.',
   },
   {
     year: 'Aug 2026',
-    label: 'Full Stack Developer — R&D',
-    description: 'Promoted to R&D at Sclera — evaluating OPC UA client libraries (asyncua / open62541), building real-time data connectors, and testing against Prosys OPC UA Simulation Server for production deployment.',
+    label: 'Full Stack Developer in R&D',
+    description: 'Promoted to the R&D team at Sclera. Built the OPC UA connector from scratch in Python (asyncua), ported it to C (open62541) for production, validated it against a real OPC UA server, and integrated the data pipeline into the Spring Boot backend.',
   },
 ] as const;
 
@@ -144,15 +145,15 @@ export const EXPERIENCE = [
     role: 'Full Stack Developer (R&D)',
     company: 'Sclera',
     type: 'Full-time',
-    period: 'Aug 2026 – Present',
-    location: 'Bangslore, India',
+    period: 'Aug 2026 – Oct 2026',
+    location: 'Mangalore, India',
     description:
-      'Working in the R&D team at Sclera, building an OPC UA client connector end-to-end — from a Python prototype through a production C implementation, real-server validation, and full Spring Boot backend integration.',
+      'Working in the R&D team at Sclera, building the OPC UA client connector end-to-end from a Python prototype all the way through a production C implementation, real server validation, and full Spring Boot central backend integration.',
     highlights: [
-      'Phase 1 — Prototype: Built the OPC UA client connector in asyncua (Python), connecting to the server, reading real-time data, and passing it through the product pipeline',
-      'Phase 2 — Production: Ported the connector to open62541 (C) for performance, stability, and production-grade reliability',
-      'Phase 3 — Validation: Tested the open62541 connector against a real Prosys OPC UA Simulation Server to validate accurate data retrieval and end-to-end correctness',
-      'Phase 4 — Integration: Integrated the validated OPC UA data pipeline into the Spring Boot backend, enabling seamless real-time data flow into the product',
+      'Phase 1 (Prototype): Started by building the OPC UA client connector in asyncua (Python), connecting to the OPC UA server, reading real-time data, and passing it through the product pipeline',
+      'Phase 2 (Production): Ported the connector to open62541 (C) to achieve the performance and reliability needed for a production environment',
+      'Phase 3 (Validation): Tested the open62541 connector against a real Prosys OPC UA Simulation Server to confirm accurate data retrieval and end-to-end correctness before going live',
+      'Phase 4 (Integration): Integrated the validated OPC UA data pipeline into the Spring Boot central backend, enabling real-time industrial data to flow seamlessly into the product',
     ],
   },
   {
@@ -160,14 +161,14 @@ export const EXPERIENCE = [
     company: 'Sclera',
     type: 'Apprenticeship',
     period: 'Feb 2026 – Jul 2026',
-    location: 'Bangalore, India',
+    location: 'Mangalore, India',
     description:
-      'Consolidated an entire microservice codebase into the main monolithic backend and researched AI/MCP integration for product features.',
+      'Consolidated an entire microservice codebase into the main monolithic backend and researched AI and MCP integration for product features.',
     highlights: [
-      'Consolidated a full microservice (50+ endpoints) into the main monolithic backend by diagnosing and resolving a multi-tenancy version conflict',
-      'Ensured compatibility across both codebases without breaking existing functionality',
-      'Analyzed end-to-end data flow across frontend, backend, and database layers of a multi-module product',
-      'Researched MCP (Model Context Protocol) servers to evaluate feasibility of integrating LLM capabilities with the VDMS database',
+      'Consolidated a full microservice with 50 plus endpoints into the main monolithic backend by diagnosing and resolving a multi-tenancy version conflict',
+      'Made sure both codebases stayed compatible and fully functional throughout the migration without breaking existing features',
+      'Analyzed the end-to-end data flow across frontend, backend, and database layers of a multi-module product to support ongoing feature development',
+      'Researched MCP (Model Context Protocol) servers to evaluate how LLM capabilities could be integrated with the VDMS database for AI-powered product features',
     ],
   },
 ] as const;
