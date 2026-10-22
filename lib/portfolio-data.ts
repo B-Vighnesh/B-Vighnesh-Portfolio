@@ -85,17 +85,17 @@ export const PROJECTS = [
     impact: 'Reduces intermediary dependency and enables smarter decision-making for rural farming communities',
     tech: ['Spring Boot', 'React.js', 'MySQL', 'JWT', 'AWS CloudFront'],
     highlights: [
-      'JWT-based authentication with role-based access control for farmers and buyers',
-      'Spring Boot REST API backend with Hibernate/JPA',
-      'React.js responsive frontend',
-      'MySQL relational database design',
-      'Deployed on AWS — EC2 backend, CloudFront CDN for frontend',
+      'Built a full-stack agriculture marketplace eliminating intermediaries between farmers and buyers, deployed on Google Cloud (VM) and Vercel',
+      'Designed and implemented RESTful APIs with Spring Boot, JWT-based authentication with OTP login, and role-based access control for farmers and buyers',
+      'Integrated external Weather, Market Price, and News APIs to give farmers data for pricing and planting decisions',
+      'Developed an interactive React.js frontend for a seamless user experience and integrated MySQL for storage'
+
     ],
     color: '#34D399',
     accentColor: '#059669',
     icon: '🌾',
     github: 'https://github.com/B-Vighnesh/AagriGgate',
-    live: 'c',
+    live: 'https://aagriggate.vercel.app',
   },
   {
     id: 'dark-pattern-detector',
@@ -104,19 +104,21 @@ export const PROJECTS = [
     description:
       'A real-time system that identifies deceptive UX patterns on websites, the kind of tricks that manipulate users into unintended actions. Combines a DistilBERT ML model with a browser extension for instant detection. Includes a full stack interface for information, feedback, and extension access, while keeping all detection fully offline to ensure data privacy.',
     impact: 'Empowers users to browse the web with full awareness and privacy',
-    tech: ['Spring Boot', 'React.js', 'MySQL', 'DistilBERT', 'FastAPI', 'Browser Extension', 'Python'],
+    tech: ['Python', 'React.js', 'FastAPI', 'DistilBERT', 'Browser Extension', ],
     highlights: [
       'ML-powered detection using DistilBERT transformer model',
       'FastAPI backend serving the ML model',
       'Browser extension for real-time text extraction and analysis',
-      'Completely offline detection ensuring user data privacy',
-      'Spring Boot + React.js interface with MySQL for feedback and information',
+      'Built an ML-based dark pattern detector that identifies manipulative tactics on websites (fake urgency, false scarcity, fabricated social proof) and alerts users in real time, naming the exact sentence, the tactic and a confidence score',
+'Developed a two-stage pipeline. A fine-tuned DistilBERT cascade (binary detector, then 7-category classifier) flags candidates, and an LLM stage then verifies each one, giving reasoning and filtering false positives, all delivered through a browser extension',
+'Making detection fully offline by exporting the models to run on the user’s machine, so no browsing data leaves the device'
+
     ],
     color: '#A78BFA',
     accentColor: '#7C3AED',
     icon: '🔍',
-    github: 'https://github.com/B-Vighnesh/Dark-Pattern-Detector',
-    live: '',
+    github: 'https://github.com/B-Vighnesh/dagent',
+    live: 'https://dagent-ten.vercel.app',
   },
   {
     id: 'equimanage',
